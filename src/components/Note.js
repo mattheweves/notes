@@ -9,7 +9,7 @@ class Note extends React.Component {
        content: this.content.value
     };
 
-    console.log(formData);
+    this.props.submitNote(formData);
 
   }
 
