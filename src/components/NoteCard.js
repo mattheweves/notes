@@ -1,6 +1,15 @@
 import React from 'react';
 
 class NoteCard extends React.Component {
+
+  renderTags(note) {
+    return note.tags.map((tag, index) =>
+      <span className="note-card-tag" key={index}>
+        {tag.name}
+      </span>
+    );
+  }
+
   render() {
     const { note, getNote, deleteNote } = this.props;
 
@@ -10,7 +19,10 @@ class NoteCard extends React.Component {
           { note.title }
         </div>
         <div className="note-card-content">
-        { note.content }
+          { note.content }
+        </div>
+        <div className="note-card-tags">
+          { this.renderTags(note)}
         </div>
         <span className="note-card-delete" onClick={() => deleteNote(note.id)}>
           <i className="material-icons">close</i>

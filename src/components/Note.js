@@ -13,22 +13,68 @@ class Note extends React.Component {
 
   };
 
-  renderTagForm() {
-    return (
-      <span>
-        Tag your note:
-        <i className="tag-button material-icons">add circle</i>
-      </span>
+  onTagSubmit(e) {
+    e.preventDefault();
+    const formData = {
+       name: this.name.value,
+    };
+    console.log(this.name.value);
+    this.props.submitTag(formData, this.props.note.id)
+    this.props.closeTagForm();
+  };
+
+  renderTagForm(note) {
+    if(note.id !== undefined) {
+      if(!this.props.newTag) {
+        return (
+          <span onClick={() => this.props.showTagForm()}>
+            Tag your note:
+            <i
+              className="tag-button material-icons"
+            >
+              add circle
+            </i>
+          </span>
+        );
+      }
+      else {
+        return(
+        <form onSubmit={(e) => this.onTagSubmit(e)}>
+          <input
+            className="tag-input"
+            type="text"
+            placeholder="Tag Name..."
+            ref={(input) => this.name = input }
+          />
+        </form>
+      );
+      }
+    }
+  }
+
+  renderTags(note) {
+    if (note.tags) {
+      return note.tags.map((tag, index) =>
+      <div className="tag" key={index}>
+        <span className="delete">
+          <i className="material-icons">delete</i>
+        </span>
+        {tag.name}
+      </div>
     );
+    }
   }
 
   render() {
 
-    const { note } = this.props;
+    const { note, closeTagForm } = this.props;
 
     return(
       <div className="note-container">
-        <form className="note-form" onSubmit={(e) => this.onSubmit(e)}>
+        <form
+          className="note-form"
+          onSubmit={(e) => this.onSubmit(e)} onClick={() => closeTagForm() }
+        >
           <input
             className="note-title-input"
             type="text"
@@ -46,9 +92,12 @@ class Note extends React.Component {
         </form>
         <div className="tag-container">
           <div className="tag-button-container">
-            {this.renderTagForm()}
+            {this.renderTagForm(note)}
           </div>
-        </div>  
+          <div className="tag-list-container">
+            {this.renderTags(note)}
+          </div>
+        </div>
       </div>
     );
   }
