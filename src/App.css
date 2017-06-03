@@ -65,7 +65,7 @@
 
 .nav-container {
   height: 60px;
-  background-color: rgb(228, 91, 91);
+  background-color: rgb(66, 146, 244);
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding-left: 40px;
   padding-right: 40px;
@@ -83,12 +83,14 @@
 
 .nav-logo {
   color: white;
-  font-size: 2.5em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  margin-top: 13px;
   float: left;
   cursor: pointer;
   animation-name: move;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 
 .nav-button {
@@ -96,7 +98,7 @@
   height: 40px;
   width: 100px;
   background: white;
-  color: rgb(228, 91, 91);
+  color: rgb(66, 146, 244);
   float: right;
   font-size: 1.5em;
   margin-right: 10px;
@@ -117,7 +119,7 @@
 @media only screen and (max-width: 500px) {
   .nav-container {
     height: 60px;
-    background-color: rgb(228, 91, 91);
+    background-color: rgb(66, 146, 244);
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     padding-left: 10px;
     padding-right: 10px;
@@ -141,7 +143,7 @@
     height: 30px;
     width: 80px;
     background: white;
-    color: rgb(228, 91, 91);
+    color: rgb(66, 146, 244);
     float: right;
     font-size: 1em;
     margin-top: 12px;
@@ -187,7 +189,7 @@
 .note-card-title {
   width: 270px;
   color: white;
-  background: rgb(228, 91, 91);
+  background: rgb(66, 146, 244);
   position: absolute;
   top: 0;
   left: 0;
@@ -210,7 +212,7 @@
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 200px;
-  height: 25px;
+  height: auto;
   padding-bottom: 13px;
 }
 
@@ -249,7 +251,7 @@
   position: absolute;
   left: 10px;
   bottom: 10px;
-  background: rgb(228, 91, 91);
+  background: rgb(66, 146, 244);
   color: white;
   border-radius: 100%;
   width: 25px;
@@ -275,7 +277,7 @@
   position: absolute;
   right: 10px;
   bottom: 10px;
-  color: rgb(228, 91, 91);
+  color: rgb(66, 146, 244);
   border-radius: 100%;
   width: 25px;
   height: 25px;
@@ -330,6 +332,7 @@
 
 /*note.css */
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 .note-container {
   display: -webkit-flex;
@@ -347,15 +350,19 @@
   font-family: 'Playfair Display', serif;
 }
 
+.note-single {
+  max-width: 600px;
+}
 .note-title-input {
   margin-top: 20px;
+  margin-left: 40px;
   border: none;
   font-size: 1.5em;
   text-align: center;
-  border-bottom: 2px solid rgb(228, 91, 91);
+  border-bottom: 2px solid rgb(66, 146, 244);
   font-family: 'Playfair Display', serif;
   width: 600px;
-  background-color: rgb(228, 91, 91);
+  background-color: rgb(66, 146, 244);
   color: white;
   padding-left: 10px;
   padding-right: 10px;
@@ -396,7 +403,7 @@
   font-family: 'Playfair Display', serif;
   height: 40px;
   width: 100px;
-  background: rgb(228, 91, 91);
+  background: rgb(66, 146, 244);
   color: white;
   float: right;
   font-size: 1.5em;
@@ -405,6 +412,7 @@
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   margin-top: 10px;
+  margin-right: 10%;
 }
 
 .note-button:hover {
@@ -540,9 +548,9 @@
     border: none;
     font-size: 1.5em;
     text-align: center;
-    border-bottom: 2px solid rgb(228, 91, 91);
+    border-bottom: 2px solid rgb(66, 146, 244);
     font-family: 'Playfair Display', serif;
-    background-color: rgb(228, 91, 91);
+    background-color: rgb(66, 146, 244);
     color: white;
     padding-left: 10px;
     padding-right: 10px;
@@ -551,7 +559,7 @@
   }
 
   .note-textarea {
-    width: 360px;
+    width: 320px;
     height: 200px;
     border: none;
     resize: none;
@@ -571,7 +579,7 @@
     font-family: 'Playfair Display', serif;
     height: 40px;
     width: 100px;
-    background: rgb(228, 91, 91);
+    background: rgb(66, 146, 244);
     color: white;
     float: right;
     font-size: 1.5em;
@@ -715,10 +723,10 @@
     border: none;
     font-size: 1.2em;
     text-align: center;
-    border-bottom: 2px solid rgb(228, 91, 91);
+    border-bottom: 2px solid rgb(66, 146, 244);
     font-family: 'Playfair Display', serif;
     width: 290px;
-    background-color: rgb(228, 91, 91);
+    background-color: rgb(66, 146, 244);
     color: white;
     padding-left: 10px;
     padding-right: 10px;
@@ -747,7 +755,7 @@
     font-family: 'Playfair Display', serif;
     height: 40px;
     width: 100px;
-    background: rgb(228, 91, 91);
+    background: rgb(66, 146, 244);
     color: white;
     float: right;
     font-size: 1.5em;
